@@ -43,255 +43,262 @@ let t0 = performance.now();
 let newArray1 = steamrollArray(arrTwo);
 let t1 = performance.now();
 let myTest1 = t1 - t0;
-console.log(`Took my func deep test 1: ${myTest1}msecs`);
 
 let t2 = performance.now();
 let newArray2 = steamrollArray(arrTwo);
 let t3 = performance.now();
 let myTest2 = t3 - t2;
-console.log(`Took my func deep test 2: ${myTest2}msecs`);
 
 let t4 = performance.now();
 let newArray3 = steamrollArray(arrTwo);
 let t5 = performance.now();
 let myTest3 = t5 - t4;
-console.log(`Took my func deep test 3: ${myTest3}msecs`);
 
 let t6 = performance.now();
 let newArray4 = steamrollArray(arrTwo);
 let t7 = performance.now();
 let myTest4 = t7 - t6;
-console.log(`Took my func deep test 4: ${myTest4}msecs`);
 
 let t8 = performance.now();
 let newArray5 = steamrollArray(arrTwo);
 let t9 = performance.now();
 let myTest5 = t9 - t8;
-console.log(`Took my func deep test 5: ${myTest5}msecs`);
 
 let t10 = performance.now();
 let newArray6 = steamrollArray(arrTwo);
 let t11 = performance.now();
 let myTest6 = t11 - t10;
-console.log(`Took my func deep test 6: ${myTest6}msecs`);
 
 let t12 = performance.now();
 let newArray7 = steamrollArray(arrTwo);
 let t13 = performance.now();
 let myTest7 = t13 - t12;
-console.log(`Took my func deep test 7: ${myTest7}msecs`);
 
 let t14 = performance.now();
 let newArray8 = steamrollArray(arrTwo);
 let t15 = performance.now();
 let myTest8 = t15 - t14;
-console.log(`Took my func deep test 8: ${myTest8}msecs`);
 
 let t16 = performance.now();
 let newArray9 = steamrollArray(arrTwo);
 let t17 = performance.now();
 let myTest9 = t17 - t16;
-console.log(`Took my func deep test 9: ${myTest9}msecs`);
 
 let t18 = performance.now();
 let newArray10 = steamrollArray(arrTwo);
 let t19 = performance.now();
 let myTest10 = t19 - t18;
-console.log(`Took my func deep test 10: ${myTest10}msecs`);
 
 let myDeepAvg = (myTest10 + myTest9 + myTest8 + myTest7 + myTest6 + myTest5 + myTest4 + myTest3 + myTest2 + myTest1) / 10;
-console.log(`My func deep test average: ${myDeepAvg}msecs`);
 
 // lodash flattenDeep on deep array
 let t20 = performance.now();
 let newArray11 = _.flattenDeep(arrTwo);
 let t21 = performance.now();
 let lodashTest1 = t21 - t20;
-console.log(`Took flattenDeep test 1: ${lodashTest1}msecs`);
 
 let t22 = performance.now();
 let newArray12 = _.flattenDeep(arrTwo);
 let t23 = performance.now();
 let lodashTest2 = t23 - t22;
-console.log(`Took flattenDeep test 2: ${lodashTest2}msecs`);
 
 let t24 = performance.now();
 let newArray13 = _.flattenDeep(arrTwo);
 let t25 = performance.now();
 let lodashTest3 = t25 - t24;
-console.log(`Took flattenDeep test 3: ${lodashTest3}msecs`);
 
 let t26 = performance.now();
 let newArray14 = _.flattenDeep(arrTwo);
 let t27 = performance.now();
 let lodashTest4 = t27 - t26;
-console.log(`Took flattenDeep test 4: ${lodashTest4}msecs`);
 
 let t28 = performance.now();
 let newArray15 = _.flattenDeep(arrTwo);
 let t29 = performance.now();
 let lodashTest5 = t29 - t28;
-console.log(`Took flattenDeep test 5: ${lodashTest5}msecs`);
 
 let t30 = performance.now();
 let newArray16 = _.flattenDeep(arrTwo);
 let t31 = performance.now();
 let lodashTest6 = t31 - t30;
-console.log(`Took flattenDeep test 6: ${lodashTest6}msecs`);
 
 let t32 = performance.now();
 let newArray17 = _.flattenDeep(arrTwo);
 let t33 = performance.now();
 let lodashTest7 = t33 - t32;
-console.log(`Took flattenDeep test 7: ${lodashTest7}msecs`);
 
 let t34 = performance.now();
 let newArray18 = _.flattenDeep(arrTwo);
 let t35 = performance.now();
 let lodashTest8 = t35 - t34;
-console.log(`Took flattenDeep test 8: ${lodashTest8}msecs`);
 
 let t36 = performance.now();
 let newArray19 = _.flattenDeep(arrTwo);
+
 let t37 = performance.now();
 let lodashTest9 = t37 - t36;
-console.log(`Took flattenDeep test 9: ${lodashTest9}msecs`);
 
 let t38 = performance.now();
 let newArray20 = _.flattenDeep(arrTwo);
 let t39 = performance.now();
 let lodashTest10 = t39 - t38;
-console.log(`Took flattenDeep test 10: ${lodashTest10}msecs`);
 
 let lodashAvg = (lodashTest10 + lodashTest9 + lodashTest8 + lodashTest7 + lodashTest6 + lodashTest5 + lodashTest4 + lodashTest3 + lodashTest2 + lodashTest1) / 10;
 
-console.log(`lodash flattenDeep average: ${lodashAvg}msecs`);
 
 // my steamrollArray on shallow array
 let t40 = performance.now();
 let newArray21 = steamrollArray(arrOne);
 let t41 = performance.now();
 let myTest11 = t41 - t40;
-console.log(`Took my func shallow test 11: ${myTest11}msecs`);
 
 let t42 = performance.now();
 let newArray22 = steamrollArray(arrOne);
 let t43 = performance.now();
 let myTest12 = t43 - t42;
-console.log(`Took my func shallow test 12: ${myTest12}msecs`);
 
 let t44 = performance.now();
 let newArray23 = steamrollArray(arrOne);
 let t45 = performance.now();
 let myTest13 = t45 - t44;
-console.log(`Took my func shallow test 13: ${myTest13}msecs`);
 
 let t46 = performance.now();
 let newArray24 = steamrollArray(arrOne);
 let t47 = performance.now();
 let myTest14 = t47 - t46;
-console.log(`Took my func shallow test 14: ${myTest14}msecs`);
 
 let t48 = performance.now();
 let newArray25 = steamrollArray(arrOne);
 let t49 = performance.now();
 let myTest15 = t49 - t48;
-console.log(`Took my func shallow test 15: ${myTest15}msecs`);
 
 let t50 = performance.now();
 let newArray26 = steamrollArray(arrOne);
 let t51 = performance.now();
 let myTest16 = t51 - t50;
-console.log(`Took my func shallow test 16: ${myTest16}msecs`);
 
 let t52 = performance.now();
 let newArray27 = steamrollArray(arrOne);
 let t53 = performance.now();
 let myTest17 = t53 - t52;
-console.log(`Took my func shallow test 17: ${myTest17}msecs`);
 
 let t54 = performance.now();
 let newArray28 = steamrollArray(arrOne);
 let t55 = performance.now();
 let myTest18 = t55 - t54;
-console.log(`Took my func shallow test 18: ${myTest18}msecs`);
 
 let t56 = performance.now();
 let newArray29 = steamrollArray(arrOne);
 let t57 = performance.now();
 let myTest19 = t57 - t56;
-console.log(`Took my func shallow test 19: ${myTest19}msecs`);
 
 let t58 = performance.now();
 let newArray30 = steamrollArray(arrOne);
 let t59 = performance.now();
 let myTest20 = t59 - t58;
-console.log(`Took my func shallow test 20: ${myTest20}msecs`);
 
 let myShallowAvg = (myTest20 + myTest19 + myTest18 + myTest17 + myTest16 + myTest15 + myTest14 + myTest13 + myTest12 + myTest11) / 10;
-console.log(`My func shallow test average: ${myShallowAvg}msecs`);
 
 // lodash flatten on shallow array
 let t60 = performance.now();
 let newArray31 = _.flatten(arrOne);
 let t61 = performance.now();
 let lodashTest11 = t61 - t60;
-console.log(`Took flatten test 1: ${lodashTest11}msecs`);
 
 let t62 = performance.now();
 let newArray32 = _.flatten(arrOne);
 let t63 = performance.now();
 let lodashTest12 = t63 - t62;
-console.log(`Took flatten test 2: ${lodashTest12}msecs`);
 
 let t64 = performance.now();
 let newArray33 = _.flatten(arrOne);
 let t65 = performance.now();
 let lodashTest13 = t65 - t64;
-console.log(`Took flatten test 3: ${lodashTest13}msecs`);
 
 let t66 = performance.now();
 let newArray34 = _.flatten(arrOne);
 let t67 = performance.now();
 let lodashTest14 = t67 - t66;
-console.log(`Took flatten test 4: ${lodashTest14}msecs`);
 
 let t68 = performance.now();
 let newArray35 = _.flatten(arrOne);
 let t69 = performance.now();
 let lodashTest15 = t69 - t68;
-console.log(`Took flatten test 5: ${lodashTest15}msecs`);
 
 let t70 = performance.now();
 let newArray36 = _.flatten(arrOne);
 let t71 = performance.now();
 let lodashTest16 = t71 - t70;
-console.log(`Took flatten test 6: ${lodashTest16}msecs`);
 
 let t72 = performance.now();
 let newArray37 = _.flatten(arrOne);
 let t73 = performance.now();
 let lodashTest17 = t73 - t72;
-console.log(`Took flatten test 7: ${lodashTest17}msecs`);
 
 let t74 = performance.now();
 let newArray38 = _.flatten(arrOne);
 let t75 = performance.now();
 let lodashTest18 = t75 - t74;
-console.log(`Took flatten test 8: ${lodashTest18}msecs`);
 
 let t76 = performance.now();
 let newArray39 = _.flatten(arrOne);
 let t77 = performance.now();
 let lodashTest19 = t77 - t76;
-console.log(`Took flatten test 9: ${lodashTest19}msecs`);
 
 let t78 = performance.now();
 let newArray40 = _.flatten(arrOne);
 let t79 = performance.now();
 let lodashTest20 = t79 - t78;
-console.log(`Took flatten test 10: ${lodashTest20}msecs`);
 
 let lodashFlattenAvg = (lodashTest20 + lodashTest19 + lodashTest18 + lodashTest17 + lodashTest16 + lodashTest15 + lodashTest14 + lodashTest13 + lodashTest12 + lodashTest11) / 10;
 
+console.log(`Took my func deep test 1: ${myTest1}msecs`);
+console.log(`Took my func deep test 2: ${myTest2}msecs`);
+console.log(`Took my func deep test 3: ${myTest3}msecs`);
+console.log(`Took my func deep test 4: ${myTest4}msecs`);
+console.log(`Took my func deep test 5: ${myTest5}msecs`);
+console.log(`Took my func deep test 6: ${myTest6}msecs`);
+console.log(`Took my func deep test 7: ${myTest7}msecs`);
+console.log(`Took my func deep test 8: ${myTest8}msecs`);
+console.log(`Took my func deep test 9: ${myTest9}msecs`);
+console.log(`Took my func deep test 10: ${myTest10}msecs`);
+
+
+console.log(`Took flattenDeep test 1: ${lodashTest1}msecs`);
+console.log(`Took flattenDeep test 2: ${lodashTest2}msecs`);
+console.log(`Took flattenDeep test 3: ${lodashTest3}msecs`);
+console.log(`Took flattenDeep test 4: ${lodashTest4}msecs`);
+console.log(`Took flattenDeep test 5: ${lodashTest5}msecs`);
+console.log(`Took flattenDeep test 6: ${lodashTest6}msecs`);
+console.log(`Took flattenDeep test 7: ${lodashTest7}msecs`);
+console.log(`Took flattenDeep test 8: ${lodashTest8}msecs`);
+console.log(`Took flattenDeep test 9: ${lodashTest9}msecs`);
+console.log(`Took flattenDeep test 10: ${lodashTest10}msecs`);
+
+console.log(`Took my func shallow test 1: ${myTest11}msecs`);
+console.log(`Took my func shallow test 2: ${myTest12}msecs`);
+console.log(`Took my func shallow test 3: ${myTest13}msecs`);
+console.log(`Took my func shallow test 4: ${myTest14}msecs`);
+console.log(`Took my func shallow test 5: ${myTest15}msecs`);
+console.log(`Took my func shallow test 6: ${myTest16}msecs`);
+console.log(`Took my func shallow test 7: ${myTest17}msecs`);
+console.log(`Took my func shallow test 8: ${myTest18}msecs`);
+console.log(`Took my func shallow test 9: ${myTest19}msecs`);
+console.log(`Took my func shallow test 10: ${myTest20}msecs`);
+
+console.log(`Took flatten test 1: ${lodashTest11}msecs`);
+console.log(`Took flatten test 2: ${lodashTest12}msecs`);
+console.log(`Took flatten test 3: ${lodashTest13}msecs`);
+console.log(`Took flatten test 4: ${lodashTest14}msecs`);
+console.log(`Took flatten test 5: ${lodashTest15}msecs`);
+console.log(`Took flatten test 6: ${lodashTest16}msecs`);
+console.log(`Took flatten test 7: ${lodashTest17}msecs`);
+console.log(`Took flatten test 8: ${lodashTest18}msecs`);
+console.log(`Took flatten test 9: ${lodashTest19}msecs`);
+console.log(`Took flatten test 10: ${lodashTest20}msecs`);
+
+console.log(`My func deep test average: ${myDeepAvg}msecs`);
+console.log(`lodash flattenDeep average: ${lodashAvg}msecs`);
+console.log(`My func shallow test average: ${myShallowAvg}msecs`);
 console.log(`lodash flatten average: ${lodashFlattenAvg}msecs`);
+
