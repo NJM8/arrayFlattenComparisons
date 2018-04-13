@@ -41,7 +41,6 @@ function steamrollArray(arr){
 // my steamrollArray on deep array
 let t0 = performance.now();
 let newArray1 = steamrollArray(arrTwo);
-console.log(newArray1);
 let t1 = performance.now();
 let myTest1 = t1 - t0;
 console.log(`Took my func deep test 1: ${myTest1}msecs`);
@@ -171,7 +170,6 @@ console.log(`lodash flattenDeep average: ${lodashAvg}msecs`);
 // my steamrollArray on shallow array
 let t40 = performance.now();
 let newArray21 = steamrollArray(arrOne);
-console.log(newArray21);
 let t41 = performance.now();
 let myTest11 = t41 - t40;
 console.log(`Took my func shallow test 11: ${myTest11}msecs`);
