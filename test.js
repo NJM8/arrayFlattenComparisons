@@ -31,6 +31,7 @@ function steamrollArray(arr){
   return arr;
 }
 
+
 function verifyFlat(arr){
   for (let i = 0; i < arr.length; i++) {
     if (Array.isArray(arr[i])) {
@@ -60,7 +61,7 @@ function createShallowArr(){
 
 function createDeepArr(){
   let arr = [];
-  for (let i = 0; i < 100000; i++) {
+  for (let i = 0; i < 50000; i++) {
     let firstLevelStart = Math.floor(Math.random() * 9) + 1;
     let firstLevelLength = Math.floor(Math.random() * 9) + 1;
     let secondLevelStart = Math.floor(Math.random() * 9) + 1;
@@ -137,10 +138,9 @@ function createDeepArr(){
 }
 
 
-function runTest(flat, deep = false){
-  const newArr = deep ? createDeepArr() : createShallowArr();
+function runTest(flat, array){
   const timeStart = performance.now();
-  const flattened = flat(newArr);
+  const flattened = flat(array);
   const timeEnd = performance.now();
   const testTime = timeEnd - timeStart;
   const isFlat = verifyFlat(flattened);
@@ -158,9 +158,10 @@ let myDeepTests = [];
 let lodashDeepTests = [];
 
 for (let i = 0; i < 100; i++) {
-  let myTest = runTest(steamrollArray, true);
+  let array = createDeepArr();
+  let myTest = runTest(steamrollArray, array);
   myDeepTests.push(myTest);
-  let lodashTest = runTest(_.flattenDeep, true);
+  let lodashTest = runTest(_.flattenDeep, array);
   lodashDeepTests.push(lodashTest);
 }
 
@@ -181,9 +182,10 @@ let myShallowTests = [];
 let lodashShallowTests = [];
 
 for (let i = 0; i < 100; i++) {
-  let myTest = runTest(steamrollArray);
+  let array = createShallowArr();
+  let myTest = runTest(steamrollArray, array);
   myShallowTests.push(myTest);
-  let lodashTest = runTest(_.flatten);
+  let lodashTest = runTest(_.flatten, array);
   lodashShallowTests.push(lodashTest);
 }
 
