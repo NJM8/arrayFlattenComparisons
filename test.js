@@ -31,6 +31,17 @@ function steamrollArray(arr){
   return arr;
 }
 
+// function from arr-flatten npm package claims to be fastest ;)
+function flat(arr, res) {
+  var i = 0, cur;
+  var len = arr.length;
+  for (; i < len; i++) {
+    cur = arr[i];
+    Array.isArray(cur) ? flat(cur, res) : res.push(cur);
+  }
+  return res;
+}
+
 
 function verifyFlat(arr){
   for (let i = 0; i < arr.length; i++) {
@@ -138,24 +149,29 @@ function createDeepArr(){
 }
 
 
-function runTest(flat, array){
+function runTest(func, array){
   const timeStart = performance.now();
-  const flattened = flat(array);
+  let flattened;
+  if (func === flat) {
+    flattened = func(array, []);
+  } else {
+    flattened = func(array);
+  }
   const timeEnd = performance.now();
   const testTime = timeEnd - timeStart;
   const isFlat = verifyFlat(flattened);
   if (!isFlat) {
     console.log('failed');
     console.log(newArr);
-    console.log(flat);
+    console.log(func);
     console.log(flattened);
   }
   return testTime;
 }
 
-
 let myDeepTests = [];
 let lodashDeepTests = [];
+let flatDeepTests = [];
 
 for (let i = 0; i < 100; i++) {
   let array = createDeepArr();
@@ -163,6 +179,8 @@ for (let i = 0; i < 100; i++) {
   myDeepTests.push(myTest);
   let lodashTest = runTest(_.flattenDeep, array);
   lodashDeepTests.push(lodashTest);
+  let flatTest = runTest(flat, array);
+  flatDeepTests.push(flatTest);
 }
 
 const myDeepAverage = myDeepTests.reduce((sum, num) => {
@@ -175,11 +193,18 @@ const lodashDeepAverage = lodashDeepTests.reduce((sum, num) => {
   return sum;
 }, 0) / lodashDeepTests.length;
 
+const flatDeepAverage = flatDeepTests.reduce((sum, num) => {
+  sum += num;
+  return sum;
+}, 0) / flatDeepTests.length;
+
 console.log(`steamrollArray deep test average: ${myDeepAverage}msecs`);
 console.log(`lodash flattenDeep deep test average: ${lodashDeepAverage}msecs`);
+console.log(`flat deep test average: ${flatDeepAverage}msecs`);
 
 let myShallowTests = [];
 let lodashShallowTests = [];
+let flatShallowTests = [];
 
 for (let i = 0; i < 100; i++) {
   let array = createShallowArr();
@@ -187,6 +212,8 @@ for (let i = 0; i < 100; i++) {
   myShallowTests.push(myTest);
   let lodashTest = runTest(_.flatten, array);
   lodashShallowTests.push(lodashTest);
+  let flatShallowTest = runTest(flat, array);
+  flatShallowTests.push(flatShallowTest);
 }
 
 const myShallowAverage = myShallowTests.reduce((sum, num) => {
@@ -199,6 +226,12 @@ const lodashShallowAverage = lodashShallowTests.reduce((sum, num) => {
   return sum;
 }, 0) / lodashShallowTests.length;
 
+const flatShallowAverage = flatShallowTests.reduce((sum, num) => {
+  sum += num;
+  return sum;
+}, 0) / flatShallowTests.length;
+
 console.log(`steamrollArray shallow test average: ${myShallowAverage}msecs`);
 console.log(`lodash flatten shallow test average: ${lodashShallowAverage}msecs`);
+console.log(`flat shallow test average: ${flatShallowAverage}msecs`);
 
