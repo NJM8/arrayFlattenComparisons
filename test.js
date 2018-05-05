@@ -17,7 +17,7 @@ function steamrollArray(arr){
         if (Array.isArray(arr[j])) {
           let subArr = arr[j];
           let subArrL = subArr.length;
-          for (k = 0; k < subArrL; k++) {
+          for (let k = 0; k < subArrL; k++) {
             newArr.push(subArr[k]);
           }
         } else {
